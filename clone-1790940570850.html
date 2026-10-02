@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Brand | Intelligent Automation for Modern Businesses</title>
+  <meta name="description" content="We build intelligent AI systems that eliminate repetitive manual work and transform how modern businesses operate. Automate the work. Accelerate the growth.">
+  <meta name="keywords" content="AI automation, business automation, workflow automation, CRM integration, intelligent systems">
+  <link rel="canonical" href="https://yourbrand.example/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourbrand.example/">
+  <meta property="og:title" content="Your Brand | Intelligent Automation for Modern Businesses">
+  <meta property="og:description" content="We build intelligent AI systems that eliminate repetitive manual work and transform how modern businesses operate. Automate the work. Accelerate the growth.">
+  <meta property="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --primary:#0b5563;         /* deep teal */
+      --secondary:#2b8cff;       /* bright blue */
+      --accent:#ff7a59;         /* coral accent */
+      --background:#f6fbfb;     /* soft pale */
+      --text:#04323b;           /* dark text */
+      --muted:#6c7a80;
+      --card:#ffffff;
+      --glass: rgba(11,85,99,0.06);
+    }
+
+    /* Reset & base */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--text);
+      background:linear-gradient(180deg, var(--background) 0%, #ecf9fb 100%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; height:auto; display:block}
+
+    /* Layout container */
+    .container{max-width:1180px; margin:0 auto; padding:0 20px}
+
+    /* Header / Nav */
+    header.navbar{
+      position:sticky; top:0; z-index:1200;
+      backdrop-filter: blur(6px);
+      background: rgba(255,255,255,0.75);
+      border-bottom: 1px solid rgba(6,35,38,0.04);
+      box-shadow: 0 6px 24px rgba(3,25,27,0.03);
+    }
+    .nav-container{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0}
+    .brand{
+      display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:0.4px;
+      font-family: Montserrat, Inter, sans-serif; color:var(--primary); font-size:1.05rem;
+    }
+    .brand-badge{
+      height:44px; min-width:44px; display:flex; align-items:center; justify-content:center;
+      background: linear-gradient(135deg, var(--secondary), rgba(43,140,255,0.85));
+      color:white; border-radius:10px; font-weight:800; font-family: Montserrat;
+      box-shadow: 0 8px 26px rgba(43,140,255,0.12);
+    }
+
+    nav .nav-links{
+      display:flex; align-items:center; gap:12px;
+    }
+    nav .nav-links a{padding:8px 10px; color:var(--text); font-weight:600; font-size:0.95rem; border-radius:8px}
+    nav .nav-links a:hover{background:var(--glass)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      font-weight:700; border-radius:12px; padding:10px 16px; cursor:pointer; border:0;
+    }
+    .btn-primary{
+      background: linear-gradient(90deg,var(--primary), #0f6b74);
+      color:#fff;
+      box-shadow: 0 12px 30px rgba(11,85,99,0.12);
+    }
+    .btn-secondary{
+      background:transparent; border:1px solid rgba(4,50,56,0.08); color:var(--text);
+    }
+    .btn-sm{padding:8px 12px; border-radius:10px; font-size:0.9rem}
+    .btn-lg{padding:12px 20px; font-size:1rem}
+    .menu-toggle{
+      display:none; width:46px; height:46px; border-radius:10px; background:transparent; border:1px solid rgba(6,35,38,0.06);
+      align-items:center; justify-content:center; gap:4px; flex-direction:column; padding:8px;
+    }
+    .menu-toggle span{display:block; width:20px; height:2px; background:var(--text); border-radius:2px}
+
+    /* Live pulse */
+    .live-pulse{position:fixed; right:18px; bottom:18px; z-index:1400}
+    .pulse-container{display:flex; gap:10px; align-items:center; background:rgba(255,255,255,0.95); padding:10px 14px; border-radius:999px; box-shadow:0 12px 30px rgba(3,25,27,0.08)}
+    .pulse-dot{width:10px; height:10px; background:linear-gradient(90deg,var(--accent),#ffb688); border-radius:50%; box-shadow:0 6px 18px rgba(255,122,89,0.16); animation:pulse 1.8s infinite;}
+    .pulse-text{font-size:0.88rem; color:var(--muted)}
+    @keyframes pulse{0%{transform:scale(0.9);opacity:0.6}50%{transform:scale(1.15);opacity:1}100%{transform:scale(0.9);opacity:0.6}}
+
+    /* Hero */
+    .hero{padding:56px 0; position:relative; overflow:hidden}
+    .hero-bg{
+      position:absolute; inset:0; right:40%; background:
+      linear-gradient(180deg, rgba(11,85,99,0.06), rgba(255,255,255,0));
+      z-index:0;
+    }
+    .hero-content{display:flex; flex-direction:column; gap:18px; align-items:flex-start; padding:20px 0; position:relative; z-index:2}
+    .hero-label{font-weight:700; color:var(--secondary); font-size:0.9rem; letter-spacing:0.6px}
+    .hero-headline{font-family: Montserrat, Inter, sans-serif; font-size:2.6rem; line-height:1.02; margin:0; color:var(--text)}
+    .hero-subheadline{max-width:760px; color:var(--muted); font-size:1.05rem}
+    .hero-actions{display:flex; gap:12px; margin-top:6px}
+
+    /* problem section */
+    .section-padding{padding:56px 0}
+    .section-label{font-size:0.9rem; font-weight:700; color:var(--secondary); letter-spacing:0.6px}
+    .section-title{font-family: Montserrat, Inter, sans-serif; font-size:1.6rem; margin:8px 0 12px; color:var(--text)}
+    .section-subtitle{color:var(--muted); max-width:720px}
+    .problem-grid{display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:center}
+    .problem-list{display:grid; gap:10px; margin-top:14px}
+    .problem-item{background:var(--card); border-radius:12px; padding:12px 14px; color:var(--text); box-shadow: 0 10px 30px rgba(3,25,27,0.04); display:flex; gap:12px; align-items:center; font-weight:600}
+    .problem-visual{display:flex; align-items:center; justify-content:center}
+    .problem-graphic{width:360px; height:260px; border-radius:16px; background: linear-gradient(135deg,#fff,#f6fbfb); box-shadow: 0 18px 50px rgba(11,85,99,0.06); display:grid; place-items:center; position:relative; overflow:hidden}
+    .problem-graphic::before{content:""; position:absolute; inset:0; background-image: url('https://picsum.photos/seed/automation/1200/800'); background-size:cover; opacity:0.09; filter:grayscale(20%)}
+
+    /* ROI */
+    .roi-grid{display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:stretch}
+    .roi-inputs{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px}
+    .input-group{display:flex; flex-direction:column; gap:8px}
+    .input-group input, .input-group select{padding:12px 14px; border-radius:8px; border:1px solid rgba(6,35,38,0.06); min-width:160px; font-size:0.95rem}
+    .roi-card{background:linear-gradient(180deg, white, #fbffff); padding:18px; border-radius:14px; box-shadow:0 18px 46px rgba(11,85,99,0.06)}
+    .roi-stat{display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px dashed rgba(6,35,38,0.04)}
+    .roi-stat .label{color:var(--muted); font-weight:600}
+    .roi-stat h3{margin:0; color:var(--primary)}
+    .meter-container{height:12px; background:rgba(4,50,56,0.06); border-radius:999px; margin:12px 0; overflow:hidden}
+    .meter-bar{height:100%; width:0%; background:linear-gradient(90deg,var(--accent), #ffb688); transition:width 600ms cubic-bezier(.2,.9,.2,1)}
+
+    .roi-result{text-align:center; margin-top:10px}
+    .roi-result h2{color:var(--secondary); margin:6px 0}
+
+    /* Solutions / cards */
+    .solutions-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:22px}
+    .solution-card{background:var(--card); padding:18px; border-radius:14px; box-shadow:0 12px 34px rgba(3,25,27,0.04); min-height:160px}
+    .solution-card h3{margin:8px 0 6px; font-size:1.05rem; color:var(--text)}
+    .solution-card p{color:var(--muted); font-size:0.95rem}
+
+    /* industries */
+    .industries-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:16px}
+    .industry-card{background:linear-gradient(180deg, #fff, #fbffff); padding:16px; border-radius:12px; box-shadow:0 10px 30px rgba(11,85,99,0.04)}
+
+    /* about */
+    .about-grid{display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:center}
+    .about-card-stack{display:flex; flex-direction:column; gap:12px}
+    .about-card{background:linear-gradient(180deg,#fff,#f7ffff); padding:16px; border-radius:12px; transform:rotate(var(--rotate)); box-shadow:0 12px 34px rgba(11,85,99,0.04)}
+
+    /* why us */
+    .why-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:18px}
+    .why-card{background:var(--card); padding:16px; border-radius:12px; box-shadow:0 12px 30px rgba(3,25,27,0.04)}
+    .why-card-number{font-weight:800; color:var(--accent); font-size:1.6rem; margin-bottom:6px}
+
+    /* audit */
+    .audit-card-glass{background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.95)); border-radius:14px; padding:20px; box-shadow:0 20px 60px rgba(11,85,99,0.06)}
+    .audit-form-grid{display:grid; grid-template-columns:1fr 360px; gap:20px; align-items:start}
+    .audit-result-panel{background:var(--card); border-radius:12px; padding:16px; box-shadow:0 12px 30px rgba(3,25,27,0.04)}
+    .score-circle{width:120px; height:120px; border-radius:50%; background:linear-gradient(135deg,#fff,#f7ffff); display:grid; place-items:center; margin:0 auto 12px; font-weight:800; color:var(--secondary); box-shadow:0 12px 36px rgba(11,85,99,0.06)}
+    .score-value{font-size:2rem}
+    .audit-actions{display:flex; gap:10px; justify-content:center; margin-top:12px}
+
+    /* testimonials marquee */
+    .reviews-marquee-container{overflow:hidden; padding:18px 0}
+    .reviews-marquee-track{display:flex; gap:14px; animation:scroll 36s linear infinite}
+    @keyframes scroll{
+      0%{transform:translateX(0)}
+      100%{transform:translateX(-50%)}
+    }
+    .review-card{min-width:320px; max-width:360px; background:var(--card); padding:16px; border-radius:12px; box-shadow:0 12px 40px rgba(3,25,27,0.04)}
+    .review-text{color:var(--muted)}
+    .reviewer-info{display:flex; gap:12px; align-items:center; margin-top:12px}
+    .reviewer-avatar{width:44px; height:44px; border-radius:10px; background:linear-gradient(135deg,var(--secondary), #7fd0ff); color:white; display:grid; place-items:center; font-weight:800}
+
+    /* footer */
+    .footer{padding:44px 0; background:linear-gradient(180deg,#072c31, #06343a); color:rgba(255,255,255,0.92)}
+    .footer-grid{display:grid; grid-template-columns:360px 1fr 1fr 1fr; gap:20px}
+    .footer .logo{font-weight:800; font-family:Montserrat; color:#fff; display:flex; align-items:center; gap:10px}
+    .footer p{color:rgba(255,255,255,0.75)}
+    .footer-col h4{color:#fff; margin-bottom:10px}
+    .footer-col a{display:block; color:rgba(255,255,255,0.85); margin-bottom:8px; font-size:0.95rem}
+
+    .footer-bottom{display:flex; justify-content:space-between; align-items:center; margin-top:26px; border-top:1px solid rgba(255,255,255,0.04); padding-top:18px; font-size:0.95rem; color:rgba(255,255,255,0.75)}
+
+    /* modal + auth */
+    .modal-overlay{position:fixed; inset:0; display:none; z-index:1600; align-items:center; justify-content:center; background:rgba(4,20,22,0.45)}
+    .modal-overlay.active{display:flex}
+    .modal-card{width:920px; max-width:94%; background:var(--card); border-radius:12px; padding:20px; box-shadow:0 40px 120px rgba(3,25,27,0.12); display:grid; grid-template-columns:1fr 420px; gap:18px; position:relative}
+    .modal-close{position:absolute; right:12px; top:8px; background:transparent; border:0; font-size:26px; cursor:pointer; color:var(--muted)}
+    .modal-tabs{display:flex; gap:8px; margin-bottom:12px}
+    .modal-tab{padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer; background:transparent; border:1px solid rgba(6,35,38,0.04)}
+    .modal-tab.active{background:linear-gradient(90deg,var(--primary), #0f6b74); color:#fff; border:0}
+    .auth-form{display:none}
+    .auth-form.active{display:block}
+    .form-group{margin-bottom:12px}
+    .pass-wrapper{display:flex; gap:8px; align-items:center}
+    .pass-wrapper input{flex:1}
+    .toggle-pass{background:transparent; border:0; cursor:pointer; padding:6px; border-radius:8px}
+    .totp-container{display:flex; gap:8px}
+    .totp-box{width:42px; height:44px; border-radius:8px; border:1px solid rgba(6,35,38,0.06); text-align:center; font-weight:700; font-size:1.05rem}
+
+    /* alex chat */
+    .alex-container{position:fixed; right:18px; bottom:18px; z-index:1500}
+    .alex-toggle{background:linear-gradient(135deg,var(--accent), #ffb688); border:0; padding:12px 14px; border-radius:14px; display:flex; gap:10px; align-items:center; box-shadow:0 14px 40px rgba(255,122,89,0.12); cursor:pointer}
+    .alex-toggle img{width:36px; height:36px; border-radius:10px; object-fit:cover}
+    .alex-window{width:340px; max-height:480px; margin-top:12px; background:var(--card); border-radius:12px; box-shadow:0 24px 80px rgba(3,25,27,0.12); overflow:hidden; display:none; flex-direction:column}
+    .alex-window.active{display:flex}
+    .alex-header{display:flex; gap:10px; align-items:center; padding:12px; border-bottom:1px solid rgba(6,35,38,0.04)}
+    .alex-messages{padding:12px; flex:1; overflow:auto}
+    .alex-input-area{display:flex; gap:8px; padding:12px; border-top:1px solid rgba(6,35,38,0.04)}
+    .alex-input-area input{flex:1; padding:10px 12px; border-radius:10px; border:1px solid rgba(6,35,38,0.06)}
+
+    /* toasts */
+    .toast{position:fixed; left:18px; bottom:18px; background:#0b5563; color:#fff; padding:12px 16px; border-radius:10px; box-shadow:0 14px 40px rgba(11,85,99,0.12); display:none}
+    .toast-success{background:linear-gradient(90deg,var(--secondary), #6fd0ff)}
+    .toast-error{background:linear-gradient(90deg,#ff6b6b,#ffb3b3)}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .problem-grid, .roi-grid, .about-grid, .audit-form-grid{grid-template-columns:1fr}
+      .solutions-grid{grid-template-columns:repeat(2,1fr)}
+      .industries-grid{grid-template-columns:repeat(2,1fr)}
+      .why-grid{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:1fr 1fr; gap:18px}
+    }
+    @media (max-width:760px){
+      .hero-headline{font-size:1.8rem}
+      .menu-toggle{display:flex}
+      nav .nav-links{position:fixed; inset:auto 0 0 0; height:calc(100vh - 74px); background:linear-gradient(180deg,#fff,#f6fbfb); flex-direction:column; padding:18px; gap:12px; transform:translateY(110%); transition:transform 300ms ease; border-top:1px solid rgba(6,35,38,0.04)}
+      nav .nav-links.open{transform:translateY(0)}
+      .nav-links a{padding:12px 16px; border-radius:10px}
+      .modal-card{grid-template-columns:1fr; width:92%}
+      .reviews-marquee-track{animation:scroll 28s linear infinite}
+    }
+  </style>
+</head>
+<body>
+  <div class="live-pulse" aria-hidden="true">
+    <div class="pulse-container">
+      <span class="pulse-dot" aria-hidden="true"></span>
+      <span class="pulse-text" id="pulseTicker">Initializing Your Brand AI systems...</span>
+    </div>
+  </div>
+
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand" aria-label="Your Brand Home">
+        <div class="brand-badge">YB</div>
+        <div>Your Brand</div>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <div class="nav-links" id="navLinks">
+          <a href="#about">About</a>
+          <a href="#roi">ROI Calculator</a>
+          <a href="#solutions">Solutions</a>
+          <a href="#industries">Industries</a>
+          <a href="#why-us">Why Us</a>
+          <a href="careers.html">Careers</a>
+          <a href="javascript:void(0)" id="loginLink">Login</a>
+          <a href="javascript:void(0)" id="signupLink">Sign Up</a>
+          <a href="book-demo.html" class="btn btn-sm btn-primary">Book a Demo</a>
+        </div>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <div class="hero-label">Your Brand AI Systems</div>
+        <h1 class="hero-headline" id="heroHeadline">Automate the Work.<br>Accelerate the Growth.</h1>
+        <p class="hero-subheadline">We build intelligent AI systems that eliminate repetitive manual work and transform how modern businesses operate.</p>
+        <div class="hero-actions">
+          <a href="book-demo.html" class="btn btn-primary btn-lg">Book a Demo</a>
+          <a href="#solutions" class="btn btn-secondary btn-lg">Explore Our Solutions</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem section-padding" id="problem">
+      <div class="container">
+        <div class="problem-grid">
+          <div class="problem-content">
+            <div class="section-label">The Problem</div>
+            <h2 class="section-title">Manual Work Is Slowing<br>Businesses Down.</h2>
+            <p class="section-subtitle">Modern businesses are suffering from repetitive tasks, disconnected systems, and inefficient operations — losing time, revenue, and growth potential.</p>
+
+            <div class="problem-list">
+              <div class="problem-item"> Manual data entry & spreadsheet dependency </div>
+              <div class="problem-item"> Repetitive operational workflows </div>
+              <div class="problem-item"> Missed customer follow-ups </div>
+              <div class="problem-item"> Non-integrated tools & systems </div>
+            </div>
+
+            <p class="problem-closer" style="margin-top:14px; font-weight:700; color:var(--muted)">"It doesn't have to be this way."</p>
+          </div>
+
+          <div class="problem-visual">
+            <div class="problem-graphic" role="img" aria-label="abstract automation illustration"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="roi-section section-padding" id="roi">
+      <div class="container">
+        <div class="roi-grid">
+          <div class="roi-info">
+            <div class="section-label">Financial Impact</div>
+            <h2 class="section-title">Calculate Your<br>"Manual Work" Tax.</h2>
+            <p class="section-subtitle">Repetitive tasks aren't just annoying — they are a direct tax on your growth. See how much your business is losing to manual operations.</p>
+
+            <div class="roi-inputs" style="margin-top:18px">
+              <div class="input-group">
+                <label>Number of Employees</label>
+                <input type="number" id="employees" value="10" min="1" aria-label="Number of employees">
+              </div>
+              <div class="input-group">
+                <label>Avg. Hourly Rate (₹)</label>
+                <input type="number" id="rate" value="45" min="1" aria-label="Average hourly rate">
+              </div>
+              <div class="input-group">
+                <label>Manual Hours/Week (Per Person)</label>
+                <input type="number" id="hours" value="8" min="1" aria-label="Manual hours per week">
+              </div>
+            </div>
+          </div>
+
+          <div class="roi-display">
+            <div class="roi-card">
+              <div class="roi-stat">
+                <span class="label">Monthly Revenue Leak</span>
+                <h3 id="monthlyWaste">₹0</h3>
+              </div>
+              <div class="roi-stat">
+                <span class="label">Annual Cost of Inefficiency</span>
+                <h3 id="yearlyWaste">₹0</h3>
+              </div>
+
+              <div class="meter-container" aria-hidden="true">
+                <div class="meter-bar" id="wasteMeter"></div>
+              </div>
+
+              <div class="roi-result">
+                <span class="label">Potential Annual Savings</span>
+                <h2 id="potentialSavings">₹0</h2>
+                <p>With Your Brand Automation</p>
+                <a href="book-demo.html" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Stop the Leak — Book a Demo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="solutions section-padding" id="solutions">
+      <div class="container text-center">
+        <div class="section-label">Our Solutions</div>
+        <h2 class="section-title">Intelligent Automation.<br>Thoughtfully Built.</h2>
+        <p class="section-subtitle">We design tailored automation systems that integrate seamlessly into your business — eliminating inefficiencies and unlocking growth.</p>
+      </div>
+
+      <div class="container">
+        <div class="solutions-grid">
+          <div class="solution-card">
+            <h3>Full Stack Web Applications</h3>
+            <p>End-to-end custom web applications built with modern architectures, focusing on performance, security, and exceptional user experiences.</p>
+          </div>
+          <div class="solution-card">
+            <h3>Mobile Applications</h3>
+            <p>Native and cross-platform mobile applications designed to bring your business directly to your customers' fingertips.</p>
+          </div>
+          <div class="solution-card">
+            <h3>Power BI Dashboards</h3>
+            <p>Interactive and dynamic business intelligence dashboards that turn complex data into actionable insights for smarter decisions.</p>
+          </div>
+          <div class="solution-card">
+            <h3>Intelligent Chatbots</h3>
+            <p>Advanced AI conversational agents trained on your data to handle customer inquiries and streamline internal operations 24/7.</p>
+          </div>
+          <div class="solution-card">
+            <h3>Telegram & WhatsApp Bots</h3>
+            <p>Seamlessly integrate smart, automated messaging and transactional chatbots directly into Telegram and WhatsApp for instant engagement.</p>
+          </div>
+          <div class="solution-card">
+            <h3>Inbound & Outbound Calling Agents</h3>
+            <p>Deploy AI voice agents capable of handling complex inbound customer service and executing proactive outbound sales or follow-up calls.</p>
+          </div>
+          <div class="solution-card">
+            <h3>All Types of Automations</h3>
+            <p>Custom intelligent workflows that eliminate repetitive tasks, reduce human error, and connect your fragmented business tools.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="industries section-padding" id="industries">
+      <div class="container text-center">
+        <div class="section-label">Industries We Serve</div>
+        <h2 class="section-title">Engineered for Every Sector.</h2>
+        <p class="section-subtitle">From high-growth startups to established enterprises, we deliver specialized AI automation that solves industry-specific challenges.</p>
+      </div>
+
+      <div class="container">
+        <div class="industries-grid">
+          <div class="industry-card">
+            <h3>Real Estate</h3>
+            <p>Automated lead nurturing, property management workflows, and intelligent viewing scheduling systems.</p>
+          </div>
+          <div class="industry-card">
+            <h3>Healthcare</h3>
+            <p>Patient onboarding automation, secure data management, and AI-driven appointment optimization. </p>
+          </div>
+          <div class="industry-card">
+            <h3>Legal Services</h3>
+            <p>Document processing, contract automation, and Case management systems that eliminate routine paperwork.</p>
+          </div>
+          <div class="industry-card">
+            <h3>E-commerce</h3>
+            <p>Personalized customer journeys, automated inventory sync, and intelligent multi-channel support. </p>
+          </div>
+          <div class="industry-card">
+            <h3>Manufacturing</h3>
+            <p>Supply chain automation, quality tracking systems, and predictive maintenance scheduling.</p>
+          </div>
+          <div class="industry-card">
+            <h3>Financial Services</h3>
+            <p>Automated financial reporting, AML/KYC workflow automation, and intelligent data reconciliation. </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about section-padding" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-content">
+            <div class="section-label">About Us</div>
+            <h2 class="section-title">We Build Systems That<br>Grow With Your Business.</h2>
+
+            <div class="about-text">
+              <p>Your Brand is an AI automation and digital systems company focused on helping businesses modernize operations through intelligent technology.</p>
+              <p>We believe technology should simplify work — not complicate it. Our team designs scalable automation systems that eliminate inefficiencies, reduce manual effort, and create connected operational ecosystems.</p>
+              <p class="highlight" style="font-weight:700; color:var(--muted)">We don't just build tools. We build systems that grow with your business. </p>
+            </div>
+
+            <div class="about-values" style="display:flex; gap:12px; margin-top:12px; flex-wrap:wrap;">
+              <div class="value-item" style="background:var(--card); padding:10px 12px; border-radius:10px; box-shadow:0 8px 26px rgba(3,25,27,0.04)">Innovation</div>
+              <div class="value-item" style="background:var(--card); padding:10px 12px; border-radius:10px; box-shadow:0 8px 26px rgba(3,25,27,0.04)">Simplicity</div>
+              <div class="value-item" style="background:var(--card); padding:10px 12px; border-radius:10px; box-shadow:0 8px 26px rgba(3,25,27,0.04)">Efficiency</div>
+              <div class="value-item" style="background:var(--card); padding:10px 12px; border-radius:10px; box-shadow:0 8px 26px rgba(3,25,27,0.04)">Integrity</div>
+            </div>
+          </div>
+
+          <div class="about-visual">
+            <div class="about-card-stack" aria-hidden="true">
+              <div class="about-card" style="--rotate:-4deg">
+                <h4>Mission</h4>
+                <p>Automate the operations. Accelerate the growth.</p>
+              </div>
+              <div class="about-card" style="--rotate:2deg">
+                <h4>Approach</h4>
+                <p>Scalable systems designed around your workflows.</p>
+              </div>
+              <div class="about-card" style="--rotate:6deg">
+                <h4>Promise</h4>
+                <p>Technology that simplifies, never complicates.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-us section-padding" id="why-us">
+      <div class="container text-center">
+        <div class="section-label">Why Choose Us</div>
+        <h2 class="section-title">Built Different.<br>Built to Last.</h2>
+        <p class="section-subtitle">We don't offer generic solutions. Every system we build is designed around your specific operational challenges.</p>
+      </div>
+
+      <div class="container">
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-card-number">01</div>
+            <h3>Strategic Automation Architecture</h3>
+            <p>We don't just automate tasks — we architect complete systems that connect every part of your operations, creating intelligent workflows that scale with your business.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-card-number">02</div>
+            <h3>Business-Focused AI Implementation</h3>
+            <p>Our AI solutions are built around your real business needs, not technology for technology's sake. Every implementation drives measurable business outcomes.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-card-number">03</div>
+            <h3>Scalable & Secure Systems</h3>
+            <p>Enterprise-grade security and scalable architecture ensure your automation grows with your business — without compromising data integrity or performance.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-card-number">04</div>
+            <h3>Long-Term Technology Partnership</h3>
+            <p>We build relationships, not just software. From initial consultation to ongoing optimization, we're invested in your long-term success and operational excellence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="audit-section section-padding" id="audit">
+      <div class="container">
+        <div class="audit-card-glass">
+          <div class="audit-header">
+            <div class="section-label">AI Transformation Tool</div>
+            <h2 class="section-title">Get Your Business<br>AI Efficiency Score.</h2>
+            <p class="section-subtitle">How ready is your business for the AI era? Our auditor analyzes your metrics and provides a shareable roadmap.</p>
+          </div>
+
+          <div class="audit-form-grid">
+            <div class="audit-inputs">
+              <div class="input-group">
+                <label>Industry</label>
+                <select id="auditIndustry">
+                  <option value="real_estate">Real Estate</option>
+                  <option value="healthcare">Healthcare</option>
+                  <option value="ecommerce">E-commerce</option>
+                  <option value="finance">Finance</option>
+                  <option value="legal">Legal</option>
+                </select>
+              </div>
+              <div class="input-group">
+                <label>Current Monthly Task Volume</label>
+                <input type="number" id="auditVolume" value="500">
+              </div>
+              <div class="input-group">
+                <label>Manual Hours/Month</label>
+                <input type="number" id="auditHours" value="160">
+              </div>
+
+              <button class="btn btn-accent btn-lg btn-primary" id="runAuditBtn" style="width:100%; margin-top:18px;"> Generate My AI Score </button>
+            </div>
+
+            <div class="audit-result-panel" id="auditResultPanel" style="display:none;">
+              <div class="score-circle" aria-hidden="true">
+                <div class="score-value" id="scoreValue">0</div>
+              </div>
+              <div class="score-text" style="text-align:center">
+                <h3 id="scoreStatus">Analyzing...</h3>
+                <p id="scoreDesc">We found 12 high-impact automation opportunities in your workflow.</p>
+              </div>
+
+              <div class="audit-actions">
+                <button class="btn btn-secondary btn-sm" id="shareAuditBtn">Share Score</button>
+                <button class="btn btn-primary btn-sm" id="auditRoadmapBtn">Get Full Roadmap</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials section-padding" id="testimonials">
+      <div class="container text-center">
+        <div class="section-label">Client Reviews</div>
+        <h2 class="section-title">Trusted by Fast-Growing Enterprises.</h2>
+        <p class="section-subtitle">Read what industry executives say about their automated systems engineered by Your Brand.</p>
+      </div>
+
+      <div class="container reviews-marquee-container" aria-hidden="false">
+        <div class="reviews-marquee-track" id="reviewsTrack" style="width:200%">
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"Your Brand completely automated our lead qualification pipeline. We saw a 300% increase in operations speed and saved 40+ manual hours a week."</p>
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">RP</div>
+              <div>
+                <h4 class="reviewer-name">Rajesh Patel</h4>
+                <p class="reviewer-title">VP of Operations, Apex Realty Group</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"The integration between our scheduling system and calendar was flawless. The AI assistants handle 80% of our customer onboarding now."</p>
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">SK</div>
+              <div>
+                <h4 class="reviewer-name">Sarah Jenkins</h4>
+                <p class="reviewer-title">Director of Product, MedLink Healthcare</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"Eliminated all manual timesheet entries. Their custom security protocols and JWT configurations integrated seamlessly with our internal databases."</p>
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">AM</div>
+              <div>
+                <h4 class="reviewer-name">Amit Mehta</h4>
+                <p class="reviewer-title">CTO, Delta Legal Partners</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"The ROI was immediate. The automated applicant verification parsed and filtered hundreds of resumes without single human intervention."</p>
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">CL</div>
+              <div>
+                <h4 class="reviewer-name">Chloe Laurent</h4>
+                <p class="reviewer-title">Head of HR, Vibe Commerce</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Duplicate items to allow smooth marquee -->
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"Your Brand completely automated our lead qualification pipeline. We saw a 300% increase in operations speed and saved 40+ manual hours a week."</p>
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">RP</div>
+              <div>
+                <h4 class="reviewer-name">Rajesh Patel</h4>
+                <p class="reviewer-title">VP of Operations, Apex Realty Group</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"The integration between our scheduling system and calendar was flawless. The AI assistants handle 80% of our customer onboarding now."</p>
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">SK</div>
+              <div>
+                <h4 class="reviewer-name">Sarah Jenkins</h4>
+                <p class="reviewer-title">Director of Product, MedLink Healthcare</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"Eliminated all manual timesheet entries. Their custom security protocols and JWT configurations integrated seamlessly with our internal databases."</p>
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">AM</div>
+              <div>
+                <h4 class="reviewer-name">Amit Mehta</h4>
+                <p class="reviewer-title">CTO, Delta Legal Partners</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p class="review-text">"The ROI was immediate. The automated applicant verification parsed and filtered hundreds of resumes without single human intervention."</p>
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">CL</div>
+              <div>
+                <h4 class="reviewer-name">Chloe Laurent</h4>
+                <p class="reviewer-title">Head of HR, Vibe Commerce</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex; flex-direction:column">
+            <a href="#" class="logo" style="font-size:1.1rem;">
+              <span style="display:inline-block; width:40px; height:40px; background:linear-gradient(135deg,var(--secondary),#7fd0ff); border-radius:8px; color:#fff; text-align:center; line-height:40px; font-weight:800; margin-right:8px">YB</span>
+              <span style="margin-top:6px">Your Brand</span>
+            </a>
+            <p style="max-width:300px; margin-top:12px">Intelligent automation for modern businesses. We build systems that eliminate repetitive work and accelerate growth.</p>
+            <p style="margin-top:14px; font-size:0.92rem; color:rgba(255,255,255,0.78)">
+              <a href="mailto:hello@yourbrand.example" style="color:rgba(255,255,255,0.85); text-decoration:underline">hello@yourbrand.example</a>
+            </p>
+
+            <div style="margin-top:18px; display:flex; gap:10px; flex-wrap:wrap">
+              <a href="#" aria-label="Instagram" style="width:44px; height:44px; border-radius:10px; background:rgba(255,255,255,0.06); display:grid; place-items:center; color:#fff">IG</a>
+              <a href="#" aria-label="Facebook" style="width:44px; height:44px; border-radius:10px; background:rgba(255,255,255,0.06); display:grid; place-items:center; color:#fff">FB</a>
+              <a href="#" aria-label="WhatsApp" style="width:44px; height:44px; border-radius:10px; background:rgba(255,255,255,0.06); display:grid; place-items:center; color:#fff">WA</a>
+              <a href="#" aria-label="LinkedIn" style="width:44px; height:44px; border-radius:10px; background:rgba(255,255,255,0.06); display:grid; place-items:center; color:#fff">IN</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#about">About</a>
+          <a href="#solutions">Services</a>
+          <a href="#industries">Industries</a>
+          <a href="careers.html">Careers</a>
+          <a href="book-demo.html">Contact</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Solutions</h4>
+          <a href="#solutions">Workflow Automation</a>
+          <a href="#solutions">CRM Integration</a>
+          <a href="#solutions">AI Assistants</a>
+          <a href="#solutions">API Connectivity</a>
+          <a href="#solutions">Full Stack Web Apps</a>
+          <a href="#solutions">Mobile Applications</a>
+          <a href="#solutions">Power BI Dashboards</a>
+          <a href="#solutions">Chatbots & Messaging Bots</a>
+          <a href="#solutions">Voice Calling Agents</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms & Conditions</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Your Brand. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy</a> &nbsp; • &nbsp; <a href="terms.html">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast toast-success" id="toastSuccess"><p>Message sent successfully! We'll be in touch soon.</p></div>
+  <div class="toast toast-error" id="toastError"><p>Something went wrong. Please try again.</p></div>
+
+  <div class="modal-overlay" id="authModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-card" role="document">
+      <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+
+      <div style="padding:6px 0">
+        <div class="modal-tabs" role="tablist" aria-label="Authentication tabs">
+          <button class="modal-tab active" id="tabLogin" role="tab" aria-selected="true">Login</button>
+          <button class="modal-tab" id="tabSignup" role="tab" aria-selected="false">Sign Up</button>
+        </div>
+
+        <form id="loginForm" class="auth-form active" autocomplete="on">
+          <div id="loginStepPassword">
+            <div class="form-group">
+              <label>Work Email</label>
+              <input type="email" name="email" placeholder="name@company.com" required autocomplete="username">
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <div class="pass-wrapper">
+                <input type="password" name="password" placeholder="8+ chars, 1 Caps, 1 Num, 1 Spec" required minlength="8" autocomplete="current-password">
+                <button type="button" class="toggle-pass" aria-label="Toggle password visibility">Show</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Google Authenticator Code <span style="font-size: 0.8em; color: #888; font-weight: normal;">(Leave empty if not set up yet)</span></label>
+              <div class="totp-container">
+                <input type="text" class="totp-box login-totp-box" maxlength="1" inputmode="numeric">
+                <input type="text" class="totp-box login-totp-box" maxlength="1" inputmode="numeric">
+                <input type="text" class="totp-box login-totp-box" maxlength="1" inputmode="numeric">
+                <input type="text" class="totp-box login-totp-box" maxlength="1" inputmode="numeric">
+                <input type="text" class="totp-box login-totp-box" maxlength="1" inputmode="numeric">
+                <input type="text" class="totp-box login-totp-box" maxlength="1" inputmode="numeric">
+              </div>
+              <input type="hidden" name="totp_code" id="totp_code_hidden">
+            </div>
+
+            <div class="form-row auth-options" style="justify-content:flex-end; display:flex;">
+              <a href="#" id="linkForgotPassword" class="forgot-link">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" style="width:100%; margin-top:6px;"> <span class="btn-text">Sign In</span></button>
+          </div>
+
+          <div id="loginStepForgot" style="display:none;">
+            <div class="auth-header-mini">
+              <h3 style="margin-bottom:5px;">Reset Password</h3>
+              <p style="font-size:0.85rem; color:#888; margin-bottom:20px;">Enter your email to receive a secure reset link.</p>
+            </div>
+
+            <div class="form-group">
+              <label>Work Email</label>
+              <input type="email" id="forgot_email" placeholder="name@company.com" autocomplete="email">
+            </div>
+            <button type="button" id="btnSendReset" class="btn btn-primary" style="width:100%;">Send Reset Link</button>
+
+            <div style="text-align:center; margin-top:15px;">
+              <a href="#" class="forgot-link btn-back-to-login" style="font-size:0.8rem;">Back to Login</a>
+            </div>
+          </div>
+
+          <div id="loginStepSetup2FA" style="display:none;">
+            <div class="auth-header-mini">
+              <h3 style="margin-bottom:5px;">Security Update</h3>
+              <p style="font-size:0.85rem; color:#888; margin-bottom:20px;">Two-Factor Authentication is required for your role. Scan this QR code with Google Authenticator.</p>
+            </div>
+
+            <div id="qrContainer" style="text-align:center; margin-bottom:20px; background:white; padding:15px; border-radius:12px;">
+              <div class="qr-placeholder" style="width:150px; height:150px; margin:0 auto; background:#f0f0f0; display:flex; align-items:center; justify-content:center; border-radius:8px;">
+                <img src="https://picsum.photos/seed/qr/150/150" alt="QR placeholder" style="width:100%; height:100%; object-fit:cover; border-radius:6px;">
+              </div>
+              <p style="font-size:0.75rem; color:#666; margin-top:15px;">Or enter code manually: <br><strong id="setupSecretKey" style="letter-spacing:2px; color:#333; font-family:monospace;">-</strong> </p>
+            </div>
+
+            <div class="form-group" style="margin-bottom:20px;">
+              <label style="display:block; color:var(--muted); font-size:0.75rem; letter-spacing:1px; margin-bottom:10px; text-align:center;">ENTER 6-DIGIT VERIFICATION CODE</label>
+              <div class="totp-input-group" style="display:flex; justify-content:space-between; gap:8px;">
+                <input type="text" maxlength="1" class="totp-box setup-totp-box">
+                <input type="text" maxlength="1" class="totp-box setup-totp-box">
+                <input type="text" maxlength="1" class="totp-box setup-totp-box">
+                <input type="text" maxlength="1" class="totp-box setup-totp-box">
+                <input type="text" maxlength="1" class="totp-box setup-totp-box">
+                <input type="text" maxlength="1" class="totp-box setup-totp-box">
+              </div>
+              <input type="hidden" id="setup_totp_code_hidden">
+            </div>
+
+            <button type="button" id="btnVerifySetup" class="btn btn-primary" style="width:100%;">Enable 2FA & Continue</button>
+            <div style="text-align:center; margin-top:15px;">
+              <a href="#" class="forgot-link btn-back-to-login" style="font-size:0.8rem;">Cancel</a>
+            </div>
+          </div>
+        </form>
+
+        <form id="signupForm" class="auth-form" style="padding-top:6px;">
+          <div style="max-width:380px">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" name="full_name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label>Work Email</label>
+              <input type="email" name="email" placeholder="name@company.com" required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" name="phone_number" placeholder="+1 (555) 000-0000">
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <div class="pass-wrapper">
+                <input type="password" name="password" placeholder="8+ chars, 1 Caps, 1 Num, 1 Spec" required minlength="8" autocomplete="new-password">
+                <button type="button" class="toggle-pass" aria-label="Toggle password visibility">Show</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Confirm Password</label>
+              <div class="pass-wrapper">
+                <input type="password" name="confirm_password" placeholder="Confirm your password" required minlength="8" autocomplete="new-password">
+                <button type="button" class="toggle-pass" aria-label="Toggle password visibility">Show</button>
+              </div>
+            </div>
+
+            <p class="signup-note" style="color:var(--muted)">Account will be reviewed by Company Owner & HR. Your role and department will be assigned upon approval.</p>
+
+            <button type="submit" class="btn btn-primary" style="width:100%;">Create Account</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="alex-container" aria-hidden="false">
+    <button class="alex-toggle" id="alexToggle" aria-label="Talk to Alex">
+      <img src="https://picsum.photos/seed/alex/64/64" alt="Alex AI">
+      <div style="display:flex; flex-direction:column; align-items:flex-start">
+        <small style="font-weight:700; color:#fff">Alex</small>
+        <small style="font-size:0.75rem; color:rgba(255,255,255,0.92)">AI Agent</small>
+      </div>
+    </button>
+
+    <div class="alex-window" id="alexWindow" role="dialog" aria-modal="false">
+      <div class="alex-header">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <img src="https://picsum.photos/seed/alex-avatar/48/48" alt="Alex" style="width:44px; height:44px; border-radius:8px; object-fit:cover">
+          <div>
+            <h4 style="margin:0">Alex</h4>
+            <p style="margin:0; font-size:0.86rem; color:var(--muted)">AI Automation Agent</p>
+          </div>
+        </div>
+        <button class="alex-close" id="alexClose" aria-label="Close Alex" style="margin-left:auto; background:transparent; border:0; font-size:20px; cursor:pointer;">&times;</button>
+      </div>
+
+      <div class="alex-messages" id="alexMessages"></div>
+
+      <form class="alex-input-area" id="alexForm">
+        <input type="text" id="alexInput" placeholder="Ask Alex anything..." autocomplete="off" aria-label="Ask Alex">
+        <button type="submit" aria-label="Send">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Mobile menu
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', ()=> {
+      navLinks.classList.toggle('open');
+    });
+
+    // Modal auth
+    const authModal = document.getElementById('authModal');
+    const loginLink = document.getElementById('loginLink');
+    const signupLink = document.getElementById('signupLink');
+    const modalClose = document.getElementById('modalClose');
+    const tabLogin = document.getElementById('tabLogin');
+    const tabSignup = document.getElementById('tabSignup');
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+
+    function openAuth(tab='login'){
+      authModal.classList.add('active');
+      authModal.style.display='flex';
+      if(tab==='login'){
+        tabLogin.classList.add('active'); tabSignup.classList.remove('active');
+        loginForm.classList.add('active'); signupForm.classList.remove('active');
+      } else {
+        tabSignup.classList.add('active'); tabLogin.classList.remove('active');
+        signupForm.classList.add('active'); loginForm.classList.remove('active');
+      }
+      authModal.setAttribute('aria-hidden','false');
+    }
+    function closeAuth(){
+      authModal.classList.remove('active');
+      authModal.style.display='none';
+      authModal.setAttribute('aria-hidden','true');
+    }
+
+    loginLink.addEventListener('click', (e)=>{ e.preventDefault(); openAuth('login')});
+    signupLink.addEventListener('click', (e)=>{ e.preventDefault(); openAuth('signup')});
+    modalClose.addEventListener('click', closeAuth);
+    tabLogin.addEventListener('click', ()=> openAuth('login'));
+    tabSignup.addEventListener('click', ()=> openAuth('signup'));
+    authModal.addEventListener('click', (ev)=> { if(ev.target === authModal) closeAuth(); });
+
+    // Toggle password visibility
+    document.querySelectorAll('.toggle-pass').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const input = btn.previousElementSibling || btn.parentElement.querySelector('input[type="password"]');
+        if(!input) return;
+        if(input.type==='password'){ input.type='text'; btn.textContent='Hide'; }
+        else { input.type='password'; btn.textContent='Show'; }
+      });
+    });
+
+    // ROI Calculator
+    const employees = document.getElementById('employees');
+    const rate = document.getElementById('rate');
+    const hours = document.getElementById('hours');
+    const monthlyWasteEl = document.getElementById('monthlyWaste');
+    const yearlyWasteEl = document.getElementById('yearlyWaste');
+    const potentialSavingsEl = document.getElementById('potentialSavings');
+    const wasteMeter = document.getElementById('wasteMeter');
+
+    function formatINR(v){
+      return '₹' + Number(v).toLocaleString('en-IN');
+    }
+
+    function calculateROI(){
+      const e = Math.max(1, Number(employees.value)||0);
+      const r = Math.max(1, Number(rate.value)||0);
+      const h = Math.max(0, Number(hours.value)||0);
+
+      // Monthly leak approximation: employees * rate * hours * 4 (weeks)
+      const monthly = e * r * h * 4;
+      const yearly = monthly * 12;
+
+      // Potential savings assumption: 45% to 70% depending on manual intensity
+      const intensity = Math.min(0.85, Math.max(0.2, (h / 40))); // scale 0.2..0.85
+      const potential = Math.round(yearly * (0.35 + intensity*0.3)); // between ~35% and ~65%
+
+      monthlyWasteEl.textContent = formatINR(Math.round(monthly));
+      yearlyWasteEl.textContent = formatINR(Math.round(yearly));
+      potentialSavingsEl.textContent = formatINR(Math.round(potential));
+
+      // Meter: percentage relative to a reasonable cap
+      const cap = Math.max(10000, e * r * 160); // cap scales with team
+      const pct = Math.min(100, Math.round((monthly / cap) * 100));
+      wasteMeter.style.width = pct + '%';
+    }
+
+    employees.addEventListener('input', calculateROI);
+    rate.addEventListener('input', calculateROI);
+    hours.addEventListener('input', calculateROI);
+    calculateROI();
+
+    // Audit tool
+    const runAuditBtn = document.getElementById('runAuditBtn');
+    const auditResultPanel = document.getElementById('auditResultPanel');
+    const scoreValue = document.getElementById('scoreValue');
+    const scoreStatus = document.getElementById('scoreStatus');
+    const scoreDesc = document.getElementById('scoreDesc');
+    const auditVolume = document.getElementById('auditVolume');
+    const auditHours = document.getElementById('auditHours');
+    const auditIndustry = document.getElementById('auditIndustry');
+    const shareAuditBtn = document.getElementById('shareAuditBtn');
+    const auditRoadmapBtn = document.getElementById('auditRoadmapBtn');
+
+    runAuditBtn.addEventListener('click', ()=>{
+      const vol = Math.max(0, Number(auditVolume.value)||0);
+      const hrs = Math.max(0, Number(auditHours.value)||0);
+      const industry = auditIndustry.value;
+
+      // Simple scoring logic
+      const base = Math.max(10, Math.min(90, 100 - Math.round((hrs/200)*60 + (vol/2000)*30)));
+      const industryFactor = (industry === 'finance' || industry === 'healthcare') ? -5 : 0;
+      const score = Math.max(8, Math.min(98, base + industryFactor + Math.round(Math.random()*6-3)));
+
+      auditResultPanel.style.display = 'block';
+      scoreValue.textContent = score;
+      if(score > 75){
+        scoreStatus.textContent = 'High Readiness';
+        scoreDesc.textContent = 'Your operations are ready for advanced automation with a short roadmap.';
+      } else if(score > 45){
+        scoreStatus.textContent = 'Moderate Readiness';
+        scoreDesc.textContent = 'There are clear automation wins that can be executed quickly.';
+      } else {
+        scoreStatus.textContent = 'Low Readiness';
+        scoreDesc.textContent = 'Significant opportunities exist — a guided roadmap will unlock value.';
+      }
+      // animate circle color slightly
+      const circle = document.querySelector('.score-circle');
+      circle.style.background = `linear-gradient(135deg, ${score>75? 'rgba(43,140,255,0.12)': '#fff'}, #f7ffff)`;
+    });
+
+    shareAuditBtn.addEventListener('click', ()=> {
+      const txt = `My AI Score: ${scoreValue.textContent} - ${scoreStatus.textContent} via Your Brand`;
+      if(navigator.share){
+        navigator.share({title:'AI Efficiency Score', text:txt}).catch(()=>{});
+      } else {
+        navigator.clipboard.writeText(txt).then(()=> {
+          showToast('success','Score copied to clipboard');
+        });
+      }
+    });
+
+    auditRoadmapBtn.addEventListener('click', ()=> window.location.href='book-demo.html');
+
+    // Simple toast helper
+    const toastSuccess = document.getElementById('toastSuccess');
+    const toastError = document.getElementById('toastError');
+    function showToast(type, message){
+      const el = (type==='success')? toastSuccess : toastError;
+      el.querySelector('p').textContent = message;
+      el.style.display = 'block';
+      setTimeout(()=> el.style.display='none', 3500);
+    }
+
+    // Authentication forms (no backend) - simple UI behavior
+    document.getElementById('loginForm').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      showToast('success','Signed in successfully');
+      closeAuth();
+    });
+    document.getElementById('signupForm').addEventListener('submit',(e)=>{
+      e.preventDefault();
+      showToast('success','Account request submitted');
+      closeAuth();
+    });
+
+    // Forgot password flow
+    document.getElementById('linkForgotPassword').addEventListener('click', (e)=>{
+      e.preventDefault();
+      document.getElementById('loginStepPassword').style.display='none';
+      document.getElementById('loginStepForgot').style.display='block';
+    });
+    document.querySelectorAll('.btn-back-to-login').forEach(el=>{
+      el.addEventListener('click',(e)=>{
+        e.preventDefault();
+        document.getElementById('loginStepForgot').style.display='none';
+        document.getElementById('loginStepSetup2FA').style.display='none';
+        document.getElementById('loginStepPassword').style.display='block';
+      });
+    });
+    document.getElementById('btnSendReset').addEventListener('click', ()=>{
+      showToast('success','Reset link sent to your email');
+    });
+
+    // Alex chat toggle (mock)
+    const alexToggle = document.getElementById('alexToggle');
+    const alexWindow = document.getElementById('alexWindow');
+    const alexClose = document.getElementById('alexClose');
+    const alexForm = document.getElementById('alexForm');
+    const alexMessages = document.getElementById('alexMessages');
+
+    alexToggle.addEventListener('click', ()=> alexWindow.classList.toggle('active'));
+    alexClose.addEventListener('click', ()=> alexWindow.classList.remove('active'));
+
+    alexForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const input = document.getElementById('alexInput');
+      const v = input.value.trim();
+      if(!v) return;
+      const userMsg = document.createElement('div'); userMsg.style.margin='8px 0'; userMsg.style.textAlign='right';
+      userMsg.innerHTML = `<div style="display:inline-block; background:#e9fbff; padding:8px 12px; border-radius:12px; max-width:80%">${v}</div>`;
+      alexMessages.appendChild(userMsg);
+      input.value = '';
+      // mock response
+      const botMsg = document.createElement('div'); botMsg.style.margin='8px 0';
+      botMsg.innerHTML = `<div style="display:inline-block; background:#fff; padding:8px 12px; border-radius:12px; max-width:80%"><strong>Alex:</strong> Thanks — we can automate that. Book a demo to get a tailored plan.</div>`;
+      setTimeout(()=> alexMessages.appendChild(botMsg), 700);
+      alexMessages.scrollTop = alexMessages.scrollHeight;
+    });
+
+    // Close nav if link clicked on mobile
+    document.querySelectorAll('.nav-links a').forEach(a=>{
+      a.addEventListener('click', ()=> {
+        if(window.innerWidth <= 760) navLinks.classList.remove('open');
+      });
+    });
+
+    // small accessibility: close modal on Esc
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape'){
+        closeAuth();
+        alexWindow.classList.remove('active');
+        navLinks.classList.remove('open');
+      }
+    });
+
+    // Preload some images for better perceived speed (picsum seeds)
+    const seeds = ['automation','qr','alex','alex-avatar','hero-1','card-1'];
+    seeds.forEach(s=>{
+      const i = new Image();
+      i.src = `https://picsum.photos/seed/${s}/800/500`;
+    });
+  </script>
+</body>
+</html>
